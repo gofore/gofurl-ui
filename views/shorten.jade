@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    div.container
+        h1 URL Shortener
+        div.row
+            form(method="post", class='form-inline', action="/shorterer")
+                div.form-group
+                    label(for='urlToShorten') URL to shorten
+                    input(type='text', name='url', class='form-control', id='urlToShorten', placeholder="http://www.gofore.com")
+                button(type='submit', class="btn btn-default") Shorten
+        div.row
+            each url in urls
+                dl.dl-horizontal
+                    dt
+                        a(href=url.url)= url.url
+                    dd
+                        a(href="http://gofurl.herokuapp.com/" + url.hash)= url.hash
+        if error
+            div.row
+                p= error
