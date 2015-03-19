@@ -31,3 +31,10 @@ block content
                     span Saves
                 dd
                     span= stats.saves
+                dt
+                    span Hits
+                dd
+                if stats.hits
+                    span=stats.hits
+                else
+                    span 0
