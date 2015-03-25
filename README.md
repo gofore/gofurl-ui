@@ -39,3 +39,13 @@ git push heroku master
 heroku open
 ```
 
+## Modify the app
+
+Make some changes.
+
+```
+git add .
+git commit -m 'some message'
+git push heroku master
+heroku open
+```
