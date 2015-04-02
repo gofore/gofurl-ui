@@ -54,9 +54,9 @@ heroku open
 Check logs, if somethings wrong, check release version and rollback. Note: Heroku rollback does not influence external database (mongolab etc.)
 
 ```
-heroku logs # displays logs
-heroku releases # displays releases. Maximum 50 with --num parameter.
-heroku rollback v4 # rollback to spesific version. Does not influence on external plugins (mongolab etc.)
+heroku logs
+heroku releases
+heroku rollback v4
 ```
 
 ## Multiple apps and promote pipeline
