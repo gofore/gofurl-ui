@@ -32,9 +32,8 @@ cd gofurl-ui
 ```
 
 ## Deploy the app
-
 ```
-heroku create [my_app] # replace my_app with your app name
+heroku create [my_app]
 git push heroku master
 heroku open
 ```
@@ -62,22 +61,22 @@ heroku rollback v4 # rollback to spesific version. Does not influence on externa
 
 ## Multiple apps and promote pipeline
 
-Create another app (staging app)
-heroku apps # lists your apps
+Create another app (production app).
 ```
-heroku create [my_production_app] replace my_production_app with your other apps name
+heroku apps
+heroku create [my_production_app]
 ```
 
-Enable pipelines plugin
+Enable pipelines plugin.
 ```
 heroku labs:enable pipelines
 heroku plugins:install git://github.com/heroku/heroku-pipeline.git
 ```
 
-Add pipeline and promote
+Add pipeline and promote.
 ```
 heroku pipeline:add my_production_app
 heroku pipeline:promote
-heroku open my_production_app # open promoted app
+heroku open my_production_app
 ``` 
 
