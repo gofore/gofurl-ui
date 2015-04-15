@@ -3,7 +3,7 @@ var router = express.Router();
 var request = require('request');
 
 
-urls = []
+var urls = [];
 
 router.get('/', function(req, res, next) {
   res.render('shorten', {urls: urls})

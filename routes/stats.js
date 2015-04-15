@@ -2,9 +2,26 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 
+var urls = [];
 
 router.get('/', function(req, res, next) {
-    res.render('stats', {urls: urls})
+
+    var url = "http://gofurl.herokuapp.com/?limit=100";
+
+    request.get(url, function(error, response, body){
+        if (error) res.render('stats', {urls: urls, error: error});
+        else{
+            try{
+                urls = JSON.parse(body);
+                res.render('stats', {urls: urls})
+            }
+            catch(e){
+
+            }
+        }
+    })
+
+
 });
 
 router.post('/', function(req,res, next){
