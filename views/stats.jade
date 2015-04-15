@@ -4,7 +4,7 @@ block content
     div.container
         h1 Stats for hash
         div.row
-            form(method="post", class='form-inline')
+            form(method="post", class='form-inline', action='/stats')
                 div.form-group
                     label(for='statsForUrl') Stats for hash
                     input(type='text', name='hash', class='form-control', id='statsForUrl', placeholder="http://www.gofore.com")
